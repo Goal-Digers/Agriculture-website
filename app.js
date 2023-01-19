@@ -19,6 +19,9 @@ app.get("/business.html",function(req,res){
 app.get("/student.html",function(req,res){
     res.sendFile(__dirname+"/student.html");
 });
+app.get("/login.html",function(req,res){
+    res.sendFile(__dirname+"/login.html");
+});
 app.listen(3000,function(){
     console.log("hey my server is running");
 });
