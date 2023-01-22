@@ -4,7 +4,7 @@
 }
 :root{
   --green: #198754;
-  --lgreen:#20c997;
+  --lgreen:#198754;
   --white:white;
 }
 input{
@@ -27,6 +27,13 @@ input{
   position:absolute;
   left:52%;
   top:50%;
+}
+.a-btn{
+  text-decoration:none;
+  color:white;
+}
+.a-btn:hover{
+  color:green;
 }
 a.nav:hover{
   border-radius:.25rem;
@@ -87,11 +94,11 @@ a.nav:hover,.btn1:hover,.btn2:hover{
   padding:20px 120px;
   border-radius: 20px;
 }
-.box:hover{
+/*.box:hover{
   background-color: var(--white);
   color:var(--lgreen) !important;
   outline-color: var(--green) !important;
-}
+}*/
 .icon{
   font-size:30px;
   margin-right:20px;

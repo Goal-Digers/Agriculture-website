@@ -1,7 +1,7 @@
 html,
 :root{
   --green: #198754;
-  --lgreen:#20c997;
+  --lgreen:#198754;
   --white:white;
 }
 
@@ -48,4 +48,8 @@ body {
 }
 .col{
   color:var(--lgreen);
+}
+.link{
+  text-decoration:none !important;
+  color:white !important;
 }

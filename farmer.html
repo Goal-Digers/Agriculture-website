@@ -5,7 +5,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password],input[type=date] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -84,6 +84,13 @@ button:hover {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8.5px);
 }
+.age,.name,.pass{
+  margin:0;
+  padding:0;
+  color:red;
+  font-size: medium;
+  font-weight: lighter;
+}
 
 /* Style the horizontal ruler */
 hr {
@@ -121,37 +128,73 @@ hr {
   }
 }
 </style>
+<script>
+  function validateForm(){
+    let x=document.forms["myform"]["name"].value;
+    if(x.length<=2){
+       document.querySelector(".name").innerHTML="enter valid name";
+       alert("Give Valid Details");
+       return false;
+    }else{
+      document.querySelector(".name").innerHTML="";
+      return true;
+    }
+    let age=document.forms["myform"]["age"].value
+    if(age.length>=3 || Number(age)<=20){
+      document.querySelector(".age").innerHTML="enter valid age";
+      alert("enter valid details");
+      return false;
+    }else{
+      document.querySelector(".age").innerHTML="";
+      return true;
+    }
+    let password1=document.forms["myform"]["password1"].value;
+    let password=document.forms["myform"]["password"].value;
+    if(password===password1){
+      document.querySelector(".pass").innerHTML="";
+      return true;
+    }else{
+      document.querySelector(".pass").innerHTML="Password did not match";
+      alert("password did not match");
+      return false;
+    }
+
+  }
+</script>
 <body>
 <div class="modal">
-    <form class="modal-content" action="/action_page.php">
+    <form name="myform" class="modal-content" action="/farmer.html" method="post" onsubmit="return validateForm()">
     <div class="container">
       <h1>Sign Up</h1>
-      <p>Please fill in this form to create an account.</p>
+      <p>Fill this form to create an account.</p>
       <hr>
-      <label for="name"><b>Name</b></label>
-      <input type="text" placeholder="Name" name="name" required>
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-      <label for="mobile_num"><b>Mobile Number</b></label>
-      <input type="text" placeholder="Enter Mobile Number" name="mobile_num" required>
-       <label for="aadhar_num"><b>Aadhar Number</b></label>
-      <input type="text" placeholder="Enter Aadhar Number" name="aadhar_num" required>
-        <label for="address"><b>Address</b></label>
+      <label for="name"><b>Name *</b></label>
+      <input type="text"  pattern="^[a-zA-Z\s]+$"placeholder="Enter Name" name="name" required>
+      <h6 class="name"></h6>
+      <label for="DOB"><b>DOB *</b></label>
+      <input max="2003-12-31" type="date" placeholder="Enter Date of Birth" name="dob" required>
+      <label for="age"><b>Age *</b></label>
+      <input type="text" placeholder="Enter Age" name="age" required>
+      <h6 class="age"></h6>
+      <label for="email"><b>Email *</b></label>
+      <input type="text" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" title="Enter valid email" placeholder="Enter Email" name="email" required>
+      <label for="mobile_num"><b>Mobile Number *</b></label>
+      <input type="text" pattern="^[6-9]\d{9}$" title="Enter valid Phone Number" placeholder="Enter Mobile Number" name="mobile" required>
+       <label for="aadhar_num"><b>Aadhar Number *</b></label>
+      <input type="text"  title="Enter valid aadhar number" placeholder="Enter Aadhar Number" name="aadhar" required>
+        <label for="address"><b>Address *</b></label>
       <input type="text" placeholder="Address" name="address" required>
-       <label for="city"><b>City</b></label>
-      <input type="text" placeholder="city" name="city" required>
-      <label for="State"><b>State</b></label>
-      <input type="text" placeholder="Enter State" name="State" required>
-     <label for="Pincode"><b>Pincode</b></label>
-      <input type="text" placeholder="Enter Pincode" name="Pincode" required>
-       <label for="products"><b>Products</b></label>
-      <input type="text" placeholder="list the producing products" name="Products" required>
+       <label for="city"><b>City *</b></label>
+      <input type="text" pattern="^[a-zA-Z\s]+$" placeholder="city" name="city" required>
+      <label for="State"><b>State *</b></label>
+      <input type="text" pattern="^[a-zA-Z\s]+$" placeholder="Enter State" name="state" required>
+     <label for="Pincode"><b>Pincode *</b></label>
+      <input type="text" maxlength="6" placeholder="Enter Pincode" name="pincode" required>
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
+      <input type="password" placeholder="Enter Password" name="password1" required>
       <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
+      <input type="password" placeholder="Repeat Password" name="password" required>
+      <h6 class="pass"></h6>
       <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
       </label>
