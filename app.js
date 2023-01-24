@@ -24,6 +24,59 @@ async function main(){
         Password:String
     });
     const Farmer=mongoose.model("Farmer",farmerSchema);
+    const customerSchema=new mongoose.Schema({
+        name:String,
+        username:String,
+        DOB:Date,
+        age:Number,
+        email:String,
+        mobile:String,
+        address:String,
+        City:String,
+        State:String,
+        pincode:String,
+        Password:String
+    });
+    const Customer=mongoose.model("Customer",customerSchema);
+    const businessSchema=new mongoose.Schema({
+        name:String,
+        username:String,
+        DOB:Date,
+        age:Number,
+        email:String,
+        mobile:String,
+        address:String,
+        city:String,
+        State:String,
+        company:String,
+        bphone:String,
+        bemail:String,
+        address:String,
+        gstn:String,
+        usertype:String,
+        pincode:String,
+        Password:String
+    });
+    const Business=mongoose.model("Business",businessSchema);
+    const studentSchema=new mongoose.Schema({
+        name:String,
+        username:String,
+        DOB:Date,
+        age:Number,
+        email:String,
+        mobile:String,
+        aadhar:String,
+        address:String,
+        city:String,
+        State:String,
+        pincode:String,
+        clgname:String,
+        Password:String
+    });
+    const Student=mongoose.model("Student",studentSchema);
+    
+    
+    
 
 app.get("/",function(req,res){
    res.sendFile(__dirname+"/Homepage.html");
@@ -55,11 +108,68 @@ app.post("/farmer.html",function(req,res){
 app.get("/customer.html",function(req,res){
     res.sendFile(__dirname+"/customer.html");
 });
+app.post("/customer.html",function(req,res){
+    const customer=new Customer({
+        name:req.body.name,
+        username:req.body.name+"@customer.in",
+        DOB:req.body.date,
+        age:req.body.age,
+        email:req.body.email,
+        mobile:req.body.mobile,
+        address:req.body.address,
+        city:req.body.city,
+        State:req.body.state,
+        pincode:req.body.pincode,
+        Password:req.body.password
+
+    });
+    customer.save();
+});
 app.get("/business.html",function(req,res){
     res.sendFile(__dirname+"/business.html");
 });
+app.post("/business.html",function(req,res){
+    const business=new Business({
+        name:req.body.name,
+        username:req.body.name+"@customer.in",
+        DOB:req.body.date,
+        age:req.body.age,
+        email:req.body.email,
+        mobile:req.body.mobile,
+        address:req.body.address,
+        city:req.body.city,
+        State:req.body.state,
+        company:req.body.company,
+        bphone:req.body.bphone,
+        bemail:req.body.bemail,
+        gstn:req.body.gstn,
+        usertype:req.body.usertype,
+        pincode:req.body.pincode,
+        Password:req.body.password
+    });
+
+})
 app.get("/student.html",function(req,res){
     res.sendFile(__dirname+"/student.html");
+});
+app.post("/student.html",function(req,res){
+    const student=new Student({
+    name:req.body.name,
+        username:req.body.name+"@farmer.in",
+        DOB:req.body.dob,
+        age:req.body.age,
+        email:req.body.email,
+        mobile:req.body.mobile,
+        aadhar:req.body.aadhar,
+        address:req.body.address,
+        city:req.body.city,
+        State:req.body.state,
+        pincode:req.body.pincode,
+        clgname:req.body.clgname,
+        Password:req.body.password
+
+    });
+
 });
 app.get("/login",function(req,res){
     res.render("login");

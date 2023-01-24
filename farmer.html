@@ -131,35 +131,30 @@ hr {
 <script>
   function validateForm(){
     let x=document.forms["myform"]["name"].value;
+    let age=document.forms["myform"]["age"].value;
+    let password1=document.forms["myform"]["password1"].value;
+    let password=document.forms["myform"]["password"].value;
+    
     if(x.length<=2){
        document.querySelector(".name").innerHTML="enter valid name";
        alert("Give Valid Details");
        return false;
-    }else{
-      document.querySelector(".name").innerHTML="";
-      return true;
     }
-    let age=document.forms["myform"]["age"].value
-    if(age.length>=3 || Number(age)<=20){
+    else if(age.length>=3 || Number(age)<=20)
+    {
       document.querySelector(".age").innerHTML="enter valid age";
       alert("enter valid details");
       return false;
-    }else{
-      document.querySelector(".age").innerHTML="";
-      return true;
     }
-    let password1=document.forms["myform"]["password1"].value;
-    let password=document.forms["myform"]["password"].value;
-    if(password===password1){
-      document.querySelector(".pass").innerHTML="";
-      return true;
-    }else{
+    else if(password!=password1)
+    {
       document.querySelector(".pass").innerHTML="Password did not match";
       alert("password did not match");
       return false;
-    }
-
+    }else{
+      return true;
   }
+}
 </script>
 <body>
 <div class="modal">
@@ -190,9 +185,9 @@ hr {
       <input type="text" pattern="^[a-zA-Z\s]+$" placeholder="Enter State" name="state" required>
      <label for="Pincode"><b>Pincode *</b></label>
       <input type="text" maxlength="6" placeholder="Enter Pincode" name="pincode" required>
-      <label for="psw"><b>Password</b></label>
+      <label for="psw"><b>Password *</b></label>
       <input type="password" placeholder="Enter Password" name="password1" required>
-      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <label for="psw-repeat"><b>Confirm Password *</b></label>
       <input type="password" placeholder="Repeat Password" name="password" required>
       <h6 class="pass"></h6>
       <label>

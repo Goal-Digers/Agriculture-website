@@ -114,3 +114,11 @@ a.nav:hover,.btn1:hover,.btn2:hover{
 .carousel-img{
   height:300px !important;
 }
+.age,.name,.pass{
+  margin:0;
+  padding:0;
+  color:red;
+  font-size: medium;
+  font-weight: lighter;
+}
+
