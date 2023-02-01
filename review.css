@@ -1,0 +1,25 @@
+.review-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.review h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.review p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.reviewer {
+    font-weight: bold;
+}
+
+.rating {
+    color: green;
+    font-weight: bold;
+}

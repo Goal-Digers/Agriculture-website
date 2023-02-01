@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="blur_box.css">
+<link rel="stylesheet" href="review.css">
+
+<head>
+    <style>
+        body {
+            background-image: url('back.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        .farmer_img {
+            display: block;
+            padding: 5px;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .farmer_img:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 200px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+            padding: 0 50px;
+        }
+
+
+        .price {
+            color: rgb(19, 18, 18);
+            font-size: 22px;
+        }
+
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="farmer_img">
+        <a target="_blank" href="farmer12.png">
+            <img src="farmer12.png" alt="Farmer_img" width="200px">
+        </a>
+    </div>
+    <div class="transbox">
+        <h2>ABOUT ME</h2>
+        <p>I'm sarah and I'm a fifth-generation farmer from kansas. I run a diversified farm with crops such as
+            cucumber,
+            onion,Tomato,custard apple,capsicum and spinach.We focus on sustainable farming practices and are dedicated
+            to providing fresh,
+            health and Organic food to our local community.</p>
+    </div>
+    <h2 style="text-align:center">Product Card</h2>
+    <div class="column">
+        <div class="card">
+            <img src="tomato.jpg" alt="Tomato" style="width:100%" height="160" border="1px solid #ddd"
+                border-radius=" 1px">
+            <h1>Tomato</h1>
+            <p class="price">$10.99</p>
+            <p>Some text about the tomato</p>
+            <p><button>Add to Cart</button></p>
+            <p><button>Buy Now</button></p>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <img src="onion.jpg" alt="onion" style="width:100%" height="160" border="1px solid #ddd"
+                border-radius=" 1px">
+            <h1>onion</h1>
+            <p class="price">$21.99</p>
+            <p>Some text about the onion</p>
+            <p><button>Add to Cart</button></p>
+            <p><button>Buy Now</button></p>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <img src="capsi.jpg" alt="capsicum" style="width:100%" height="160" border="1px solid #ddd"
+                border-radius=" 1px">
+            <h1>capsicum</h1>
+            <p class="price">$22.51</p>
+            <p>Some text about capsicum</p>
+            <p><button>Add to Cart</button></p>
+            <p><button>Buy Now</button></p>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <img src="spinach.jpg" alt="spinach" style="width:100%" height="160" border="1px solid #ddd"
+                border-radius=" 1px">
+            <h1>spinach</h1>
+            <p class="price">$32.43</p>
+            <p>Some text about the spinach</p>
+            <p><button>Add to Cart</button></p>
+            <p><button>Buy Now</button></p>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <img src="custard.jpg" alt="custard" style="width:100%" height="160" border="1px solid #ddd"
+                border-radius=" 1px">
+            <h1>custard</h1>
+            <p class="price">$12.89</p>
+            <p>Some text about the custard</p>
+            <p><button>Add to Cart</button></p>
+            <p><button>Buy Now</button></p>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <img src="cucumber.jpg" alt="cucumber" style="width:100%" height="160" border="1px solid #ddd"
+                border-radius=" 1px">
+            <h1>cucumber</h1>
+            <p class="price">$15.23</p>
+            <p>Some text about cucumber</p>
+            <p><button>Add to Cart</button></p>
+            <p><button>Buy Now</button></p>
+        </div>
+    </div>
+
+    <div class="review-container">
+        <hr>
+        <hr>
+        <h2>Product Review</h2>
+        <div class="review">
+            <div class="transbox">
+                <h3>Product Name : Onion</h3>
+                <p>Review by <span class="reviewer">John Doe</span></p>
+                <p>Rated: <span class="rating">5 stars</span></p>
+                <p>This product is amazing! I highly recommend it to anyone looking for a high-quality product. The
+                    design is sleek and the functionality is top-notch. I will definitely be purchasing from this
+                    farm again in the future.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
